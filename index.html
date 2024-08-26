@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <div class="container h-100 d-flex justify-content-center align-content-center">
+        <div class="main-box m-auto p-3 rounded">
+            <h1 class="text-uppercase title">Currency Converter</h1>
+            <div class="my-3">
+                <label for="amount" class="form-label">Amount :</label>
+                <input type="number" class="form-control" id="amount" aria-describedby="emailHelp"  placeholder="enter a number to be converted">
+            </div>
+            <div class="row align-content-center px-1 mb-2">
+                <div class="col-4 p-2 select-menu position-relative">
+                    <div class="select-menu-btn text-center rounded btn w-100 d-flex justify-content-evenly align-content-center">
+                        <p id="primary-currency" class=" m-auto">USD</p> <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="options rounded list-unstyled py-2 m-0 overflow-y-scroll position-absolute w-75">
+                        <li class="option">SDG</li>
+                    </ul>
+                </div>
+                <div class="col-4 p-2 text-center">
+                    <h4 class=""><i class="fa-solid fa-right-left"></i></h4>
+                </div>
+                <div class="col-4 p-2 select-menu">
+                    <!-- <div class=" text-center rounded btn w-100 position-relative" >
+                        <p id="secondary-currency">EGP</p>
+                    </div>
+                </div> -->
+                
+            </div>
+            <button class="btn rounded text-center w-100" id="convert-btn">Convert</button>
+            <div id="result" class="rounded w-100 text-center p-2 mt-3">
+                34524
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
