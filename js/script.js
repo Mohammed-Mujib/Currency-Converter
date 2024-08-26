@@ -36,24 +36,35 @@ const CurrencyCodes = [
 const amount = document.querySelector("#amount");
 const primaryCurrency = document.querySelector("#primary-currency")
 const secoundryCurrency = document.querySelector("#secoundry-currency")
-const selectMenu = document.querySelectorAll(".select-menu");
+// const selectMenu = document.querySelectorAll(".select-menu");
+const menuOptions = document.querySelectorAll(".select-menu .option");
 const result = document.querySelector("#result");
 const convertBtn = document.querySelector("#convert-btn")
+
 async function getData() {
-    let response = await fetch(`https://v6.exchangerate-api.com/v6/df6e97f22687196dd59b93f2/latest/${selectMenu[0].value}`);
+    let response = await fetch(`https://v6.exchangerate-api.com/v6/df6e97f22687196dd59b93f2/latest/${primaryCurrency.value}`);
     let data = await response.json();
-    console.log(data);
-    let operation = Number(amount.value ) * data.conversion_rates[`${selectMenu[1].value}`];
-    result.innerHTML = `${amount.value} ${data.base_code} = ${operation} ${selectMenu[1].value} `
+    let operation = Number(amount.value ) * data.conversion_rates[`${secoundryCurrency.value}`];
+    result.innerHTML = `${amount.value} ${primaryCurrency.value} = ${operation} ${secoundryCurrency.value} `
 }
+
 function setoptions () {
   for (currency of CurrencyCodes) {
-    selectMenu[0].innerHTML += `<option vlaue="${currency}" class="option">${currency}</option>`;
-    selectMenu[1].innerHTML += `<option vlaue="${currency}" class="option">${currency}</option>`;
+    primaryCurrency.innerHTML += `<option vlaue="${currency}" class="option">${currency}</option>`;
+    secoundryCurrency.innerHTML += `<option vlaue="${currency}" class="option">${currency}</option>`;
   }
 }
+
 setoptions()
-console.log(selectMenu[0].value);
+
 convertBtn.addEventListener('click',()=>{
   getData()
 })
+
+function start() {
+  amount.value = 1
+  secoundryCurrency.value = "EGP";
+  getData()
+}
+
+start()

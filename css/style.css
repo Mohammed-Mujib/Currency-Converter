@@ -27,10 +27,9 @@ body{
 .main-box{
     width: 500px;
     color: var(--text-color);
-    /* background: linear-gradient(var(--tect-ligth-color),var(--text-ligth-color)) ; */
     background: linear-gradient(var(--background-light-color),var(--background-light-color)) ;
     backdrop-filter: blur(4px);
-    border: 1px solid var(--text-color);
+    border: 2px solid var(--background-color);
 }
 h1{
     font-size: 30px;
@@ -45,7 +44,6 @@ h1{
     background-color: var(--main-dark-color);
     color: var(--text-color);
 }
-
 #amount:focus{
     outline-color:var(--accent-color) !important ;
 }
@@ -53,10 +51,13 @@ h1{
     min-height: 50px;
     background-color: var(--accent-color);
     color: var(--background-color);
-    /* text-align: center; */
     display: flex;
     justify-content: center;
     align-items: center;
+}
+#result::selection{
+    color: var(--text-color);
+    background-color: var(--main-color);
 }
 .select-menu{
     background-color: var(--main-color);
@@ -69,6 +70,6 @@ h1{
     background-color: var(--main-dark-color);
     color: var(--text-color);
 }
-/* .select-menu .option[value="EGP"]{
-
-} */
+.select-menu:focus{
+    background-color: var(--main-color);    
+}
