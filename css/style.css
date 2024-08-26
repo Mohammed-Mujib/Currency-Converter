@@ -45,6 +45,7 @@ h1{
     background-color: var(--main-dark-color);
     color: var(--text-color);
 }
+
 #amount:focus{
     outline-color:var(--accent-color) !important ;
 }
@@ -57,26 +58,17 @@ h1{
     justify-content: center;
     align-items: center;
 }
-.select-menu-btn{
+.select-menu{
     background-color: var(--main-color);
     color: var(--text-color);
     font-size: 20px;
+    max-height: 400px;
     transition: .3s;
 }
-.select-menu-btn:hover{
+.select-menu:hover{
     background-color: var(--main-dark-color);
     color: var(--text-color);
 }
-.options{
-    max-height: 300px;
-    background-color: var(--text-color);
-    color: var(--background-color);
-    
-}
-.option{
-    padding: 0px 16px; 
-    cursor: pointer;
-}
-.options .option:hover{
-    background-color: var(--accent-color);
-}
+/* .select-menu .option[value="EGP"]{
+
+} */

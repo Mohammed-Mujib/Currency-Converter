@@ -1,4 +1,3 @@
-// const money_key = "df6e97f22687196dd59b93f2";
 const CurrencyCodes = [
     "USD", "AED", "AFN", "ALL", "AMD",
     "ANG", "AOA", "ARS", "AUD", "AWG",
@@ -34,16 +33,27 @@ const CurrencyCodes = [
     "XDR", "XOF", "XPF", "YER", "ZAR",
     "ZMW", "ZWL"
   ];
-  const options  = document.querySelectorAll(".options ")
+const amount = document.querySelector("#amount");
+const primaryCurrency = document.querySelector("#primary-currency")
+const secoundryCurrency = document.querySelector("#secoundry-currency")
+const selectMenu = document.querySelectorAll(".select-menu");
+const result = document.querySelector("#result");
+const convertBtn = document.querySelector("#convert-btn")
 async function getData() {
-    let response = await fetch(`https://v6.exchangerate-api.com/v6/df6e97f22687196dd59b93f2/latest/${c}`);
+    let response = await fetch(`https://v6.exchangerate-api.com/v6/df6e97f22687196dd59b93f2/latest/${selectMenu[0].value}`);
     let data = await response.json();
     console.log(data);
+    let operation = Number(amount.value ) * data.conversion_rates[`${selectMenu[1].value}`];
+    result.innerHTML = `${amount.value} ${data.base_code} = ${operation} ${selectMenu[1].value} `
 }
 function setoptions () {
   for (currency of CurrencyCodes) {
-    options [0].innerHTML += `<li class="option">${currency}</li>`;
+    selectMenu[0].innerHTML += `<option vlaue="${currency}" class="option">${currency}</option>`;
+    selectMenu[1].innerHTML += `<option vlaue="${currency}" class="option">${currency}</option>`;
   }
 }
 setoptions()
-// setCurrences()
+console.log(selectMenu[0].value);
+convertBtn.addEventListener('click',()=>{
+  getData()
+})

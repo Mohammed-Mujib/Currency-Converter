@@ -17,27 +17,24 @@
                 <input type="number" class="form-control" id="amount" aria-describedby="emailHelp"  placeholder="enter a number to be converted">
             </div>
             <div class="row align-content-center px-1 mb-2">
-                <div class="col-4 p-2 select-menu position-relative">
-                    <div class="select-menu-btn text-center rounded btn w-100 d-flex justify-content-evenly align-content-center">
-                        <p id="primary-currency" class=" m-auto">USD</p> <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <ul class="options rounded list-unstyled py-2 m-0 overflow-y-scroll position-absolute w-75">
-                        <li class="option">SDG</li>
-                    </ul>
+                <div class="col-4 p-2">
+                    <select class="select-menu text-center rounded btn w-100 position-relative" id="primary-currency">
+                        
+                    </select>
                 </div>
                 <div class="col-4 p-2 text-center">
                     <h4 class=""><i class="fa-solid fa-right-left"></i></h4>
                 </div>
-                <div class="col-4 p-2 select-menu">
-                    <!-- <div class=" text-center rounded btn w-100 position-relative" >
-                        <p id="secondary-currency">EGP</p>
-                    </div>
-                </div> -->
+                <div class="col-4 p-2">
+                    <select class="select-menu text-center rounded btn w-100 position-relative" id="secoundry-currency">
+                    
+                    </select>
+                </div>
                 
             </div>
             <button class="btn rounded text-center w-100" id="convert-btn">Convert</button>
             <div id="result" class="rounded w-100 text-center p-2 mt-3">
-                34524
+                
             </div>
         </div>
     </div>
